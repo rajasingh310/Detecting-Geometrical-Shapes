@@ -1,0 +1,3 @@
+[submodule "image_generator"]
+	path = image_generator
+	url = https://github.com/rajasingh310/image_generator.git
