@@ -1,7 +1,7 @@
-from generate_images import Generate_Images
+from generate_images import GenerateImages
 
 # Initialize the object
-geometrical_shape = Generate_Images(resolution_image=(100, 100), background_color=(0, 0, 0))
+geometrical_shape = GenerateImages(resolution_image=(100, 100), background_color=(0, 0, 0))
 # Create a directory to save the images
 geometrical_shape.create_directories(directory_name="geometrical_shapes_using_pillow")
 

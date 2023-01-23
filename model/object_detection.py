@@ -2,6 +2,7 @@ import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Dense, Conv2D, Flatten
 
+
 class GeometricalShapesDetectionModel:
     def __init__(self):
         # Create an ImageDataGenerator object

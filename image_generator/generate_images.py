@@ -1,10 +1,10 @@
 import random
 import os
 import shutil
-from draw_image_using_pillow import Draw_Geometrical_Shapes
+from draw_image_using_pillow import DrawGeometricalShapes
 
 
-class Generate_Images:
+class GenerateImages:
 
     def __init__(self, resolution_image, background_color):
         """
@@ -39,7 +39,7 @@ class Generate_Images:
         Generate images using pillow
         """
         for i in range(num_images):
-            self.drawing = Draw_Geometrical_Shapes(self.resolution_image, self.background_color)
+            self.drawing = DrawGeometricalShapes(self.resolution_image, self.background_color)
             self.shape_drawing_methods = [
                 self.drawing.conics,
                 self.drawing.quadrilateral,

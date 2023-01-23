@@ -5,7 +5,14 @@ from PIL import Image, ImageDraw
 def color():
     return randint(0, 250), randint(0, 250), randint(0, 250)
 
-class Draw_Geometrical_Shapes:
+
+def positions(resolution_image):
+    x = randint(0, resolution_image[0])
+    y = randint(0, resolution_image[1])
+    return x, y
+
+
+class DrawGeometricalShapes:
 
     def __init__(self, resolution_image=(500, 500), background_color=(255, 255, 255)):
         # Create a new image with a black background
@@ -15,9 +22,9 @@ class Draw_Geometrical_Shapes:
         self.draw = ImageDraw.Draw(self.image)
 
     def conics(self):
-        self.r = randint(5, int(self.resolution_image[0] / 2))-1    # Smallest radius value  5
-        self.x = randint(self.r, self.resolution_image[0]-self.r)
-        self.y = randint(self.r, self.resolution_image[1]-self.r)
+        self.r = randint(5, int(self.resolution_image[0] / 2)) - 1  # Smallest radius value  5
+        self.x = randint(self.r, self.resolution_image[0] - self.r)
+        self.y = randint(self.r, self.resolution_image[1] - self.r)
 
         self.coordinate = [self.x - self.r, self.y - self.r, self.x + self.r, self.y + self.r]
 
@@ -26,37 +33,27 @@ class Draw_Geometrical_Shapes:
                           width=2)
 
     def quadrilateral(self):
-        self.x_0 = randint(0, self.resolution_image[0])
-        self.y_0 = randint(0, self.resolution_image[1])
-        self.x_1 = randint(0, self.resolution_image[0])
-        self.y_1 = randint(0, self.resolution_image[1])
-
-        self.coordinate = (self.x_0, self.y_0, self.x_1, self.y_1)
+        x_0, y_0 = positions(self.resolution_image)
+        x_1, y_1 = positions(self.resolution_image)
+        self.coordinate = (x_0, y_0, x_1, y_1)
 
         self.draw.rectangle(self.coordinate,
                             outline=color(),
                             width=2)
 
     def line(self):
-        self.x_0 = randint(0, self.resolution_image[0])
-        self.y_0 = randint(0, self.resolution_image[1])
-        self.x_1 = randint(0, self.resolution_image[0])
-        self.y_1 = randint(0, self.resolution_image[1])
-
-        self.coordinate = [self.x_0, self.y_0, self.x_1, self.y_1]
+        x_0, y_0 = positions(self.resolution_image)
+        x_1, y_1 = positions(self.resolution_image)
+        self.coordinate = [x_0, y_0, x_1, y_1]
 
         self.draw.line(self.coordinate,
                        fill=color(), width=2)
 
     def polygon(self):
-        self.x_0 = randint(0, self.resolution_image[0])
-        self.y_0 = randint(0, self.resolution_image[1])
-        self.x_1 = randint(0, self.resolution_image[0])
-        self.y_1 = randint(0, self.resolution_image[1])
-        self.x_2 = randint(0, self.resolution_image[0])
-        self.y_2 = randint(0, self.resolution_image[1])
-
-        self.coordinate = [self.x_0, self.y_0, self.x_1, self.y_1, self.x_2, self.y_2]
+        x_0, y_0 = positions(self.resolution_image)
+        x_1, y_1 = positions(self.resolution_image)
+        x_2, y_2 = positions(self.resolution_image)
+        self.coordinate = [x_0, y_0, x_1, y_1, x_2, y_2]
 
         self.draw.polygon(self.coordinate,
                           outline=color(),
