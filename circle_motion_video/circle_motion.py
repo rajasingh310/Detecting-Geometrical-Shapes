@@ -9,10 +9,6 @@ color = image_generator.draw_image_using_pillow.color
 positions = image_generator.draw_image_using_pillow.positions
 
 
-def closest_even(n):
-    return n & ~1
-
-
 class CircleMotionVideo:
     def __init__(self, resolution_image=(512, 512, 3)):
         self.resolution_image = resolution_image
