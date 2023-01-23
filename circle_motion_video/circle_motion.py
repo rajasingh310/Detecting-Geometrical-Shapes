@@ -39,13 +39,13 @@ class CircleMotionVideo:
         for i in range(250):
             self.img_copy = self.img.copy()
             if i <= 10:
-                self.n = 1
+                self.n += 1
             elif i <= 20:
-                self.m = 1
+                self.m += 1
             elif i <= 30:
-                self.m = -1
+                self.m += -1
             else:
-                self.m = 1
+                self.m += 1
             self.start_position = (self.start_position[0] + self.n, self.start_position[1] + self.m)
             cv2.circle(self.img_copy, self.start_position, self.radius, self.color, self.thickness)
             self.out.write(self.img_copy)
